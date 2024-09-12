@@ -84,8 +84,8 @@ This example is same as Example-4 with only difference that containers are run u
 
 * Both images are built using docker build command.
 * *code_operation.py* file is deleted if it exists.
-* Docker image created by *docker_file_2b_simple_addition* file is run as docker container using docker run command. *code_operation.py* file is copied from within container to local file system. Docker container is stopped & removed. Docker image is removed.
-* Docker image created by *docker_file_2a_simple_addition* file is run as docker container (with volume mapping) using docker run command. *code_simple_addition.py* file is run to perform summation and get result. Docker container is stopped & removed. Docker image is removed.
+* Docker image created by *docker_file_2b_simple_addition* file is run as docker container using docker compose. *code_operation.py* file is copied from within container to local file system. Docker container is stopped & removed. Docker image is removed.
+* Docker image created by *docker_file_2a_simple_addition* file is run as docker container (with volume mapping) using docker compose. *code_simple_addition.py* file is run to perform summation and get result. Docker container is stopped & removed. Docker image is removed.
 
 Docker build command is executed to create docker image.
 Docker Compose is used to run docker containers.
