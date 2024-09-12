@@ -34,6 +34,12 @@ Docker build & run commands are executed to create docker image and run containe
 * docker_file_1_simple_addition
 * docker_build_and_run.sh
 
+*code_operation.py* contains a function to sum two numbers. *code_simple_addition.py* passes two numbers to that function and gets the summation result.
+
+Both python files are placed inside docker image.
+
+Docker build & run commands are executed to create docker image and run container.
+
 ![image](https://github.com/user-attachments/assets/46e1c50a-e990-4f76-891a-61b1ce7e0b33)
 
 
@@ -44,10 +50,24 @@ Docker build & run commands are executed to create docker image and run containe
 * docker_file_2b_simple_addition
 * docker_build_and_run.sh
 
+*code_operation.py* contains a function to sum two numbers. *code_simple_addition.py* passes two numbers to that function and gets the summation result.
+
+*code_simple_addition.py* is placed inside docker image created by *docker_file_2a_simple_addition* file.
+
+*code_operation.py* is placed inside docker image created by *docker_file_2b_simple_addition* file.
+
+* Both images are built using docker build command.
+* *code_operation.py* file is deleted if it exists.
+* Docker image created by *docker_file_2b_simple_addition* file is run as docker container using docker run command. *code_operation.py* file is copied from within container to local file system. Docker container is stopped & removed. Docker image is removed.
+* Docker image created by *docker_file_2a_simple_addition* file is run as docker container (with volume mapping) using docker run command. *code_simple_addition.py* file is run to perform summation and get result. Docker container is stopped & removed. Docker image is removed.
+
+Docker build & run commands are executed to create docker image and run container.
+
 ![image](https://github.com/user-attachments/assets/0c81e0b1-a0d5-4486-bfb1-97c6682eb1e1)
 
 
 ### Example-5:
+This example is same as Example-4 with only difference that containers are run using Docker Compose (instead of docker run command)
 * code_simple_addition.py
 * code_operation.py
 * docker_file_2a_simple_addition
@@ -56,6 +76,21 @@ Docker build & run commands are executed to create docker image and run containe
 * docker_compose_file_2b.yml
 * docker_build_and_run.sh
 
+*code_operation.py* contains a function to sum two numbers. *code_simple_addition.py* passes two numbers to that function and gets the summation result.
+
+*code_simple_addition.py* is placed inside docker image created by *docker_file_2a_simple_addition* file.
+
+*code_operation.py* is placed inside docker image created by *docker_file_2b_simple_addition* file.
+
+* Both images are built using docker build command.
+* *code_operation.py* file is deleted if it exists.
+* Docker image created by *docker_file_2b_simple_addition* file is run as docker container using docker run command. *code_operation.py* file is copied from within container to local file system. Docker container is stopped & removed. Docker image is removed.
+* Docker image created by *docker_file_2a_simple_addition* file is run as docker container (with volume mapping) using docker run command. *code_simple_addition.py* file is run to perform summation and get result. Docker container is stopped & removed. Docker image is removed.
+
+Docker build command is executed to create docker image.
+Docker Compose is used to run docker containers.
+
 ![image](https://github.com/user-attachments/assets/80b4c402-2b37-4baf-9730-cb000415a8ad)
 
 
+=====================================================================================================================
