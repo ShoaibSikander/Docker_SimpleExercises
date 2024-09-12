@@ -1,0 +1,7 @@
+services:
+  addition:
+    container_name: container_2a_simple_addition
+    image: image_2a_simple_addition
+    volumes:
+      - /home/docker_simple_exercise:/my_dir
+    #command: ["python", "code_simple_addition.py"]

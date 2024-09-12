@@ -1,0 +1,10 @@
+# create a new build stage from a base image
+FROM python:3.10.6-slim
+# install numpy libraray
+RUN pip install numpy 
+# set the working directory
+WORKDIR /my_dir
+# Copy file into docker image
+COPY code_numpy_addition.py /my_dir/code_numpy_addition.py
+# set the command to be executed when running a container from an image
+CMD [ "python", "code_numpy_addition.py"]

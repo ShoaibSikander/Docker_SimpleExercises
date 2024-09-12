@@ -1,0 +1,5 @@
+services:
+  addition_operation:
+    container_name: container_2b_simple_addition
+    image: image_2b_simple_addition
+    #command: ["sleep", "infinity"]
