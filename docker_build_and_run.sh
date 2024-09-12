@@ -127,7 +127,7 @@ docker rmi image_2b_simple_addition
 echo "-----"
 
 # run docker image as container
-docker run -v /home/docker_simple_exercise:/my_dir --name container_2a_simple_addition image_2a_simple_addition
+docker run -v /home/Docker_SimpleExercises:/my_dir --name container_2a_simple_addition image_2a_simple_addition
 echo "-----"
 
 # remove docker container
