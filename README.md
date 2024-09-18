@@ -88,9 +88,40 @@ This example is same as Example-4 with only difference that containers are run u
 * Docker image created by *docker_file_2a_simple_addition* file is run as docker container (with volume mapping) using docker compose. *code_simple_addition.py* file is run to perform summation and get result. Docker container is stopped & removed. Docker image is removed.
 
 Docker build command is executed to create docker image.
+
 Docker Compose is used to run docker containers.
 
 ![image](https://github.com/user-attachments/assets/80b4c402-2b37-4baf-9730-cb000415a8ad)
+
+
+### Example-6:
+This example is same as Example-4 with only difference that containers are run & stopped/removed using Docker Compose (instead of docker run & docker stop & docker rm commands)
+* code_simple_addition.py
+* code_operation.py
+* docker_file_2a_simple_addition
+* docker_file_2b_simple_addition
+* docker_compose_file_2a.yml
+* docker_compose_file_2b.yml
+* docker_build_and_run.sh
+
+*code_operation.py* contains a function to sum two numbers. *code_simple_addition.py* passes two numbers to that function and gets the summation result.
+
+*code_simple_addition.py* is placed inside docker image created by *docker_file_2a_simple_addition* file.
+
+*code_operation.py* is placed inside docker image created by *docker_file_2b_simple_addition* file.
+
+* Both images are built using docker build command.
+* *code_operation.py* file is deleted if it exists.
+* Docker image created by *docker_file_2b_simple_addition* file is run as docker container using docker compose. *code_operation.py* file is copied from within container to local file system. Docker container is stopped & removed using docker compose. Docker image is removed.
+* Docker image created by *docker_file_2a_simple_addition* file is run as docker container (with volume mapping) using docker compose. *code_simple_addition.py* file is run to perform summation and get result. Docker container is stopped & removed using docker compose. Docker image is removed.
+
+Docker build command is executed to create docker image.
+
+Docker Compose is used to run docker containers.
+
+Docker Compose is used to stop & remove docker containers.
+
+![image](https://github.com/user-attachments/assets/6b41e9b9-c72c-4dc3-97de-fad17d392b2b)
 
 
 =====================================================================================================================
